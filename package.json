@@ -11,7 +11,7 @@
     "start": "react-native start",
     "test": "jest",
     "format": "prettier --write \"**/*.{ts,tsx}\"",
-    "prepare": "husky install "
+    "prepare": "husky install"
   },
   "dependencies": {
     "@react-native-async-storage/async-storage": "^1.17.12",
@@ -57,7 +57,7 @@
     "preset": "react-native"
   },
   "lint-staged": {
-    "src/**/*.{js,jsx,ts,tsx}": [
+    "src/** /*.{js,jsx,ts,tsx}": [
       "yarn lint",
       "yarn format"
     ]
