@@ -1,13 +1,13 @@
 /* eslint-disable no-fallthrough */
 import React from 'react';
-import {Text, TextProps} from 'react-native';
+import {Text, TextProps, ViewProps} from 'react-native';
 
 import {TEXT_SIZE_TYPE, FONT_TYPES, COLOR_TYPES} from '@dtos';
 import {SFSTextStyle} from '@assets/styles';
 
 export interface SFTextProps extends TextProps {
   text?: string;
-  style?: object;
+  style?: ViewProps;
   color?: COLOR_TYPES;
   weight?: FONT_TYPES;
   size?: TEXT_SIZE_TYPE;
