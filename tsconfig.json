@@ -1,0 +1,23 @@
+{
+  "extends": "@tsconfig/react-native/tsconfig.json",
+  "compilerOptions": {
+    "strict": true,
+    // Path alias config
+    "baseUrl": ".",
+    "paths": {
+      // This needs to be mirrored in babel.config.js
+      "*": ["./app/*"],
+      "@dtos": ["app/dtos"],
+      "@store": ["./app/store"],
+      "@store/*": ["./app/store/*"],
+      "@assets/*": ["./app/assets/*"],
+      "@router/*": ["./app/router/*"],
+      "@utility/*": ["./app/utility/*"],
+      "@screens/*": ["./app/screens/*"],
+      "@services/*": ["./app/services/*"],
+      "@components": ["./app/components"],
+      "@components/*": ["./app/components/*"],
+      "@config/*": ["./app/config/*"],
+    }
+  }
+}
