@@ -10,7 +10,7 @@
     "lint": "eslint .",
     "start": "react-native start",
     "test": "jest",
-    "format": "prettier --write \"**/*.{ts.tsx}\"",
+    "format": "prettier --write \"**/*.{ts,tsx}\"",
     "prepare": "husky install "
   },
   "dependencies": {
@@ -57,7 +57,7 @@
     "preset": "react-native"
   },
   "lint-staged": {
-    "src/**/*.{js, jsx, ts, tsx}": [
+    "src/**/*.{js,jsx,ts,tsx}": [
       "yarn lint",
       "yarn format"
     ]
