@@ -5,24 +5,24 @@ import {createStore, compose, applyMiddleware, combineReducers} from 'redux';
 import {authReducer} from './reducers';
 
 const persistConfig = {
-  key: 'root',
-  storage: AsyncStorage,
-  whitelist: ['authReducer'],
+    key: 'root',
+    storage: AsyncStorage,
+    whitelist: ['authReducer'],
 };
 
 const customMiddleWare = () => (next: any) => (action: any) => {
-  next(action);
+    next(action);
 };
 
 const reducers = combineReducers({
-  authReducer,
+    authReducer,
 });
 
 const persistedReducer = persistReducer(persistConfig, reducers);
 
 const store = createStore(
-  persistedReducer,
-  compose(applyMiddleware(thunk, customMiddleWare)),
+    persistedReducer,
+    compose(applyMiddleware(thunk, customMiddleWare)),
 );
 
 export const persistor = persistStore(store);
