@@ -31,6 +31,8 @@ type SectionProps = PropsWithChildren<{
     title: string;
 }>;
 
+const a = 23;
+
 function Section({children, title}: SectionProps): JSX.Element {
     const isDarkMode = useColorScheme() === 'dark';
     return (
