@@ -1,0 +1,30 @@
+export type TEXT_SIZE_TYPE =
+  | 'h1'
+  | 'h2'
+  | 'h3'
+  | 'lg'
+  | 'header'
+  | 'body'
+  | 'title'
+  | 'caption';
+export type FONT_TYPES = 'normal' | 'bold' | 'light';
+export type COLOR_TYPES =
+  | 'primary'
+  | 'white'
+  | 'secondary'
+  | 'success'
+  | 'danger'
+  | 'warning'
+  | 'info'
+  | 'light'
+  | 'dark'
+  | 'link'
+  | 'outline-primary'
+  | 'outline-secondary'
+  | 'outline-success'
+  | 'outline-danger'
+  | 'outline-warning'
+  | 'outline-info'
+  | 'outline-light'
+  | 'outline-dark'
+  | 'outline-link';
