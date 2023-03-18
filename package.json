@@ -57,7 +57,7 @@
     "preset": "react-native"
   },
   "lint-staged": {
-    "app/**/*.{js,jsx,ts,tsx}": [
+    "*/**/*.{js,jsx,ts,tsx}": [
       "yarn lint",
       "yarn format"
     ]
