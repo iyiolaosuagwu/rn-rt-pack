@@ -24,7 +24,6 @@ import {
   LearnMoreLinks,
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
-import RTIcon from '@components/RTIcon';
 
 type SectionProps = PropsWithChildren<{
   title: string;
@@ -56,7 +55,7 @@ function Section({children, title}: SectionProps): JSX.Element {
   );
 }
 
-function App(): JSX.Element {
+function LoginScreen(): JSX.Element {
   const isDarkMode = useColorScheme() === 'dark';
 
   const backgroundStyle = {
@@ -73,7 +72,6 @@ function App(): JSX.Element {
         contentInsetAdjustmentBehavior="automatic"
         style={backgroundStyle}>
         <Header />
-        <RTIcon size={30} />
         <View
           style={{
             backgroundColor: isDarkMode ? Colors.black : Colors.white,
@@ -117,4 +115,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default App;
+export default LoginScreen;
