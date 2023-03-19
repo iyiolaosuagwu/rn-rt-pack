@@ -42,6 +42,10 @@ const RTLayout = (props: RTLayoutProps) => {
 
     const performAutoLogout = useCallback(() => {
         // navigate to login screen / welcome screen
+        console.log({
+            idle: 'idle',
+            logout: 'yesy',
+        });
     }, []);
 
     const checkInactive = useCallback(() => {
