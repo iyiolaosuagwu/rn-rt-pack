@@ -8,6 +8,7 @@
 import React from 'react';
 import type {PropsWithChildren} from 'react';
 import {
+    Pressable,
     SafeAreaView,
     ScrollView,
     StatusBar,
@@ -25,6 +26,8 @@ import {
 } from 'react-native/Libraries/NewAppScreen';
 import RTIcon from '@components/RTIcon';
 import RTLayout from '@components/RTLayout';
+import {RootState, useAppDispatch, useAppSelector} from '@store';
+import {login} from '@store/actions';
 
 type SectionProps = PropsWithChildren<{
     title: string;
@@ -59,6 +62,26 @@ function Section({children, title}: SectionProps): JSX.Element {
 function App(): JSX.Element {
     const isDarkMode = useColorScheme() === 'dark';
 
+    // dispatch actions
+    const dispatch = useAppDispatch();
+
+    // extract user infor from store (authReducer)
+    const {user, token} = useAppSelector(
+        (state: RootState) => state.authReducer,
+    );
+
+    const checkIt = async () => {
+        return dispatch(
+            login({
+                password: 'string',
+                phone_number: 'string',
+                push_token: 'string',
+            }),
+        );
+    };
+
+    console.log(user, token, 'user, token');
+
     const backgroundStyle = {
         backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
     };
@@ -75,6 +98,9 @@ function App(): JSX.Element {
                     style={backgroundStyle}>
                     <Header />
                     <RTIcon size={30} />
+                    <Pressable onPress={() => checkIt()}>
+                        <Text>Press it</Text>
+                    </Pressable>
                     <View
                         style={{
                             backgroundColor: isDarkMode

@@ -19,6 +19,6 @@
       "@components": ["./app/components"],
       "@components/*": ["./app/components/*"],
       "@config/*": ["./app/config/*"],
-    }
+    },
   }
 }

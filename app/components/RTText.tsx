@@ -1,4 +1,3 @@
-/* eslint-disable no-fallthrough */
 import React from 'react';
 import {Text, TextProps, ViewProps} from 'react-native';
 
@@ -76,6 +75,7 @@ function SFText(props: SFTextProps) {
             break;
         case 'dark':
             textColorStyle = SFSTextStyle.textDarkColor;
+            break;
         case 'danger':
             textColorStyle = SFSTextStyle.textDangerColor;
             break;

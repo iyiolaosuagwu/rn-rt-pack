@@ -7,6 +7,7 @@ import axiosInstance from '@config/axios';
 export const login =
     (payload: INTERFACE.LoginRequestInterface) =>
     async (_dispatch: Dispatch) => {
+        console.log('was!');
         return axiosInstance.post('/login', payload);
     };
 
