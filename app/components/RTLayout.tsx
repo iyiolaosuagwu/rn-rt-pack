@@ -26,7 +26,7 @@ const RTLayout = (props: RTLayoutProps) => {
     const {style, children} = props;
     const netInfo = useNetInfo();
 
-    const start = true;
+    let start = true;
     const lastInteraction = useRef(new Date());
     const [timeWentInactive, setTimeWentInactive] = useState<Date | null>(null);
     const inactivityTimer = useRef<boolean | number>(false);
@@ -85,17 +85,20 @@ const RTLayout = (props: RTLayoutProps) => {
         performAutoLogout();
         clearInterval(inactivityTimer.current as number);
         inactivityTimer.current = false;
+        start = false;
         console.log('idle');
     };
 
     const handleMoveShouldSetPanResponder = useCallback(() => {
         console.log('touch');
+        start = true;
         setIsActive();
         return false;
     }, [setIsActive]);
 
     const handleStartShouldSetPanResponder = useCallback(() => {
         console.log('touch');
+        start = true;
         setIsActive();
         return false;
     }, [setIsActive]);

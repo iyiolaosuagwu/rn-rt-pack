@@ -64,5 +64,6 @@
       "yarn lint",
       "yarn format"
     ]
-  }
+  },
+  "references": [ { "path": "app", "prepend": true } ]
 }
