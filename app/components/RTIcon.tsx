@@ -1,5 +1,4 @@
 import React from 'react';
-import {ViewStyle} from 'react-native';
 
 import Entypo from 'react-native-vector-icons/Entypo';
 import Feather from 'react-native-vector-icons/Feather';
@@ -17,7 +16,7 @@ interface RTIconProps {
     icon: ICON_TYPE;
     size: number;
     color?: COLOR_TYPES;
-    style?: ViewStyle;
+    style?: {};
 }
 
 function RTIcon(props: RTIconProps) {

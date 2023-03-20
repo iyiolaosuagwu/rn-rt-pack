@@ -4,7 +4,7 @@ import {Text, TextProps, ViewProps} from 'react-native';
 import {TEXT_SIZE_TYPE, FONT_TYPES, COLOR_TYPES} from '@dtos';
 import {SFSTextStyle} from '@assets/styles';
 
-export interface SFTextProps extends TextProps {
+export interface RTTextProps extends TextProps {
     text?: string;
     style?: ViewProps;
     color?: COLOR_TYPES;
@@ -13,7 +13,7 @@ export interface SFTextProps extends TextProps {
     children?: React.ReactNode;
 }
 
-function SFText(props: SFTextProps) {
+function RTText(props: RTTextProps) {
     const {text, style, weight, size, color, ...rest} = props;
 
     let textColorStyle = {};
@@ -98,9 +98,9 @@ function SFText(props: SFTextProps) {
     );
 }
 
-SFText.defaultProps = {
+RTText.defaultProps = {
     text: 'Text Required',
     weight: 'normal',
 };
 
-export default SFText;
+export default RTText;

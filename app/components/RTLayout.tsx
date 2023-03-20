@@ -26,7 +26,8 @@ const RTLayout = (props: RTLayoutProps) => {
     const {style, children} = props;
     const netInfo = useNetInfo();
 
-    let start = true;
+    // let start = true;
+    const [start, setStart] = useState(true);
     const lastInteraction = useRef(new Date());
     const [timeWentInactive, setTimeWentInactive] = useState<Date | null>(null);
     const inactivityTimer = useRef<boolean | number>(false);
@@ -42,10 +43,6 @@ const RTLayout = (props: RTLayoutProps) => {
 
     const performAutoLogout = useCallback(() => {
         // navigate to login screen / welcome screen
-        console.log({
-            idle: 'idle',
-            logout: 'yesy',
-        });
     }, []);
 
     const checkInactive = useCallback(() => {
@@ -85,20 +82,20 @@ const RTLayout = (props: RTLayoutProps) => {
         performAutoLogout();
         clearInterval(inactivityTimer.current as number);
         inactivityTimer.current = false;
-        start = false;
+        setStart(false);
         console.log('idle');
     };
 
     const handleMoveShouldSetPanResponder = useCallback(() => {
         console.log('touch');
-        start = true;
+        setStart(true);
         setIsActive();
         return false;
     }, [setIsActive]);
 
     const handleStartShouldSetPanResponder = useCallback(() => {
         console.log('touch');
-        start = true;
+        setStart(true);
         setIsActive();
         return false;
     }, [setIsActive]);
