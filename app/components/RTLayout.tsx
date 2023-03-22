@@ -30,7 +30,7 @@ const RTLayout = (props: RTLayoutProps) => {
     const [start, setStart] = useState(true);
     const lastInteraction = useRef(new Date());
     const [timeWentInactive, setTimeWentInactive] = useState<Date | null>(null);
-    const inactivityTimer = useRef<boolean | number>(false);
+    const inactivityTimer = useRef<boolean | number | {}>(false);
     const waitForInactivity = useRef<number>(0);
 
     useEffect(() => {
